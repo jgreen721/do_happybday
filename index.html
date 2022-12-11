@@ -65,7 +65,7 @@
             if (i == 9) {
               setTimeout(() => {
                 showLayerTwo();
-              }, 2500);
+              }, 1500);
             }
           }
         }, i * 500);
@@ -82,6 +82,7 @@
           document.querySelector(".overlay-2-h1").style.fontSize = "2.5rem";
           document.querySelector(".overlay-2-h1").style["-webkit-box-reflect"] =
             " below -5px linear-gradient(transparent, white)";
+          document.querySelector(".drink2").classList.add("cheers");
         }, 3000);
       }
     </script>
