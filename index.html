@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>~ Stonans Bday 🍻</title>
+  </head>
+  <body>
+    <div class="app">
+      <div class="layer-1">
+        <div class="overlay-2">
+          <img class="front-overlay-bg" src="irishpub.jpeg" alt="" />
+        </div>
+        <h1 class="header-one">
+          <span style="--i: 1s" class="one">4</span
+          ><span style="--i: 1s" class="two"
+            >1<span style="--i: 4s" class="three">?</span
+            ><span style="--i: 4s" class="four">!</span></span
+          >
+        </h1>
+      </div>
+      <div class="layer-2">
+        <div class="overlay-2">
+          <img class="overlay-bg" src="irishpub.jpeg" alt="" />
+        </div>
+        <h1 class="overlay-2-h1">Ah ☘️ Well!</h1>
+        <div class="drink-froth-parent">
+          <div class="froth-div">
+            <div class="froth"></div>
+          </div>
+          <div class="drink-parent-outer">
+            <div class="drink-parent-inner">
+              <div class="beer"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="drink-froth-parent drink2">
+          <!-- <div class="froth-div">
+            <div class="froth"></div>
+          </div> -->
+          <div class="drink-parent-outer">
+            <div class="drink-parent-inner">
+              <div class="beer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var layerTwoEl = document.querySelector(".layer-2");
+      var layerOneEl = document.querySelector(".layer-1");
+      var letters = ["W", "T", "F", "!"];
+      let html = "";
+
+      for (let i = 0; i <= 9; i++) {
+        setTimeout(function () {
+          if (i >= 6) {
+            document.querySelector(".header-one").innerHTML = "";
+            html += letters[i - 6];
+            document.querySelector(".header-one").innerHTML = html;
+            if (i == 9) {
+              setTimeout(() => {
+                showLayerTwo();
+              }, 2500);
+            }
+          }
+        }, i * 500);
+      }
+
+      function showLayerTwo() {
+        console.log("showLayerTwo");
+        layerOneEl.style.display = "none";
+        layerTwoEl.style.display = "flex";
+        setTimeout(() => {
+          document.querySelector(
+            ".overlay-2-h1"
+          ).innerHTML = `Happy B-day ☘️ 🍻`;
+          document.querySelector(".overlay-2-h1").style.fontSize = "2.5rem";
+          document.querySelector(".overlay-2-h1").style["-webkit-box-reflect"] =
+            " below -5px linear-gradient(transparent, white)";
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
